@@ -33,7 +33,7 @@ Here's the algorithm
 We relax each node, that is, we check for all the edges that comes and goes from the node, and see if we can update the shortest-distance estimate $d$
 to a smaller value. 
 
-If the edge we happen to check is an incoming edge, we check if what we have, $v.d$, is better than what the 'u.d' plus the weight $w(u, v)$. 
+If the edge we happen to check is an incoming edge, we check if what we have, $v.d$, is better than what the $u.d$ plus the weight $w(u, v)$ is offering us. 
 If so happens that $v.d < u.d + w(u, v)$, then what we have is worse, and we set the shortest-distance estimate for v to $v.d = u.d + w(u, v)$.
 We also update the ancestor $v.\pi$ to $v.\pi = u$, since we will be taking that shortest path now.
 
