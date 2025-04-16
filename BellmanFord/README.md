@@ -3,7 +3,7 @@ This algorithm is capable of finding the shortest path from one node to the othe
 and seeing if we are able to update the shortest path estimate to a smaller value.
 
 In the implementation, I use the example provided in the book 'Introduction to Algorithms' - Thomas H. Cormen. Here it is:
-![Example of BellmanFord aplication](./BellmanFord/ej_BellmanFord_CORMEN.png)
+![Example of BellmanFord aplication](./ej_BellmanFord_CORMEN.png)
 
 ### HOW IT WORKS
 We want to find the shortest path from one root node $v$ to the other nodes.
@@ -21,11 +21,11 @@ The idea of the algorithm is to 'relax' each node, that is, we want to tighten t
  'relaxing' because each node is 'relaxed' while the algorithm executes (with respects to this constraint), and it will be set to the minimun it can be when the algorithm finishes.
  Should be called 'stressing' the constraint, that will be more intuitive, since we are decreasing the shortest-distance estimate $v.d$, but for historic reasons is called 'relaxing'.
 
-![Relaxation](./BellmanFord/relaxation.png)
+![Relaxation](./relaxation.png)
 
 Here's the algorithm
 
-![Bellman-Ford algorithm](./BellmanFord/BF_algorithm_CORMEN.png)
+![Bellman-Ford algorithm](./BF_algorithm_CORMEN.png)
 
 We relax each node, that is, we check for all the edges that comes and goes from the node, and see if we can update the shortest-distance estimate $d$
 to a smaller value. 
