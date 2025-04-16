@@ -20,11 +20,16 @@ The idea of the algorithm is to 'relax' each node, that is, we want to tighten t
  'relaxing' because each node is 'relaxed' while the algorithm executes (with respects to this constraint), and it will be set to the minimun it can be when the algorithm finishes.
  Should be called 'stressing' the constraint, that will be more intuitive, since we are decreasing the shortest-distance estimate $v.d$, but for historic reasons is called 'relaxing'.
 
-![Relaxation](./relaxation.png)
+![Relaxation](./pictures/relaxation.png)
+
+We want to set all the distance from the root node $v$ to the rest of the node to $\infty$, because when we start comparing, we want the first distances we check to always 
+be better of what we have in the begining, because at the begining we know knothing of the distance from the root node to the rest of nodes. The distance from the node to itself will be set to 0 in the implementation. At the begining of the algorithm, the predecesors will be set to null (I use -1 in the implementation, since there are no negative nodes, this means theres no predecesor), since there are no predecesors before running the algorithm. Actually, we know one: the predecesor of the root node its itself.
+
+![Initialization](./pictures/initialization.png)
 
 Here's the algorithm
 
-![Bellman-Ford algorithm](./BF_algorithm_CORMEN.png)
+![Bellman-Ford algorithm](./pictures/BF_algorithm_CORMEN.png)
 
 We relax each node, that is, we check for all the edges that comes and goes from the node, and see if we can update the shortest-distance estimate $d$
 to a smaller value. 
@@ -43,4 +48,4 @@ $i$ using the edge weight still results in a shorter path estimate from the sour
 
 ### Example
 In the implementation, I use the example provided in the book 'Introduction to Algorithms' - Thomas H. Cormen. Here it is:
-![Example of BellmanFord aplication](./ej_BellmanFord_CORMEN.png)
+![Example of BellmanFord aplication](./pictures/ej_BellmanFord_CORMEN.png)
