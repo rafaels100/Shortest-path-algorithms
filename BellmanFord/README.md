@@ -23,7 +23,7 @@ The idea of the algorithm is to 'relax' each node, that is, we want to tighten t
 ![Relaxation](./pictures/relaxation.png)
 
 We want to set all the distances from the root node $v$ to the rest of the nodes to $\infty$, because when we start comparing, we want the first distances we check to always 
-be better of what we have in the beginning, since at the beginning we know nothing about those distances. The distance from the node to itself will be set to 0 in the implementation. At the beginning of the algorithm, the predecessors will be set to null (I use -1 in the implementation, since there are no negative nodes, this means there's no predecessor), since there are no predecessors before running the algorithm. Actually, we know one: the predecessor of the root $v$ node is itself: $v./pi = v$.
+be better of what we have in the beginning, since at the beginning we know nothing about those distances. The distance from the node to itself will be set to 0 in the implementation. At the beginning of the algorithm, the predecessors will be set to null (I use -1 in the implementation, since there are no negative nodes, this means there's no predecessor), since there are no predecessors before running the algorithm. Actually, we know one: the predecessor of the root $v$ node is itself: $v.\pi = v$.
 
 ![Initialization](./pictures/initialization.png)
 
