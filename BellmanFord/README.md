@@ -12,18 +12,18 @@ $v.d$ : The current 'shortest-path estimate' for v
 
 And
 
-$v.\pi$ : the predecesor of the node v
+$v.\pi$ : the predecessor of the node v
 
 The shortest-path estimate is the current best shortest path we have from the root node $v$ to the node $u \in E \setminus \{v\}$.
 
 The idea of the algorithm is to 'relax' each node, that is, we want to tighten the triangle inequality constraint, which states that $v.d \leq u.d + w(u, v)$. We call it
- 'relaxing' because each node is 'relaxed' while the algorithm executes (with respects to this constraint), and it will be set to the minimun it can be when the algorithm finishes.
+ 'relaxing' because each node is 'relaxed' while the algorithm executes (with respects to this constraint), and it will be set to the minimum it can be when the algorithm finishes.
  Should be called 'stressing' the constraint, that will be more intuitive, since we are decreasing the shortest-distance estimate $v.d$, but for historic reasons is called 'relaxing'.
 
 ![Relaxation](./pictures/relaxation.png)
 
-We want to set all the distance from the root node $v$ to the rest of the node to $\infty$, because when we start comparing, we want the first distances we check to always 
-be better of what we have in the begining, because at the begining we know knothing of the distance from the root node to the rest of nodes. The distance from the node to itself will be set to 0 in the implementation. At the begining of the algorithm, the predecesors will be set to null (I use -1 in the implementation, since there are no negative nodes, this means theres no predecesor), since there are no predecesors before running the algorithm. Actually, we know one: the predecesor of the root node its itself.
+We want to set all the distances from the root node $v$ to the rest of the nodes to $\infty$, because when we start comparing, we want the first distances we check to always 
+be better of what we have in the beginning, since at the beginning we know nothing about those distances. The distance from the node to itself will be set to 0 in the implementation. At the beginning of the algorithm, the predecessors will be set to null (I use -1 in the implementation, since there are no negative nodes, this means there's no predecessor), since there are no predecessors before running the algorithm. Actually, we know one: the predecessor of the root $v$ node is itself: $v./pi = v$.
 
 ![Initialization](./pictures/initialization.png)
 
