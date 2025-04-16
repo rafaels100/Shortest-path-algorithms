@@ -2,9 +2,6 @@
 This algorithm is capable of finding the shortest path from one node to the others. Its complexity is O(N * M), since for each node, we'll be checking each edge
 and seeing if we are able to update the shortest path estimate to a smaller value.
 
-In the implementation, I use the example provided in the book 'Introduction to Algorithms' - Thomas H. Cormen. Here it is:
-![Example of BellmanFord aplication](./ej_BellmanFord_CORMEN.png)
-
 ### HOW IT WORKS
 We want to find the shortest path from one root node $v$ to the other nodes.
 To do so, two important quantities are to be stored, that is:
@@ -37,3 +34,7 @@ We also update the ancestor $v.\pi$ to $v.\pi = u$, since we will be taking that
 If the edge we happen to check is an outgoing edge, we check if what we can offer to our neighbor is better than what they currently have. 
 If $u.d < v.d + w(v, u)$, then what we can do is better, and we update the shortest-distance estimate for $u$ to $u.d = v.d + w(v, u)$.
 We also update the ancestor $u.\pi$ to $u.\pi = v$, since we will be taking that shortest path now.
+
+### Example
+In the implementation, I use the example provided in the book 'Introduction to Algorithms' - Thomas H. Cormen. Here it is:
+![Example of BellmanFord aplication](./ej_BellmanFord_CORMEN.png)
