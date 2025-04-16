@@ -20,13 +20,15 @@ $v.\pi$ : the predecesor of the node v
 
 The shortest-path estimate is the current best shortest path we have from the root node $v$ to the node $u \in E \setminus \{v\}$.
 
-The idea of the algorithm is to 'relax' each node, that is, we want to tighten the triangle inequality constraint, which states that $v.d \leq u.d + w(u, v)$ constraint, which is 'relaxed', since it will be set to the minimun it can be when the algorithm finishes.
+The idea of the algorithm is to 'relax' each node, that is, we want to tighten the triangle inequality constraint, which states that $v.d \leq u.d + w(u, v)$. We call it
+ 'relaxing' because each node is 'relaxed' while the algorithm executes (with respects to this constraint), and it will be set to the minimun it can be when the algorithm finishes.
+ Should be called 'stressing' the constraint, that will be more intuitive, since we are decreasing the shortest-distance estimate $v.d$, but for historic reasons is called 'relaxing'.
 
 ![Relaxation](./BellmanFord/relaxation.png)
 
 Here's the algorithm
 
-![Bellamn-Ford algorithm]
+![Bellman-Ford algorithm](./BellmanFord/BF_algorithm_CORMEN.png)
 
 We relax each node, that is, we check for all the edges that comes and goes from the node, and see if we can update the shortest-distance estimate $d$
 to a smaller value. 
