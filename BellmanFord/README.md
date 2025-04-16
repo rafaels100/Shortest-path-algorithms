@@ -8,7 +8,7 @@ Its strength lies in the fact that it can work with negative edges, and it's als
 We want to find the shortest path from one root node $v$ to the other nodes.
 To do so, two important quantities are to be stored, that is:
 
-$d$ : The 'shortest-path estimate'
+$v.d$ : The current 'shortest-path estimate' for v
 
 And
 
@@ -38,7 +38,7 @@ If $u.d < v.d + w(v, u)$, then what we can do is better, and we update the short
 We also update the ancestor $u.\pi$ to $u.\pi = v$, since we will be taking that shortest path now.
 
 ### Checking for negative cycles
-To detect negative-weight cycles, we examine each node $i$ and its predecessor $i\pi$. If performing an additional relaxation — i.e., traversing from the predecessor to node 
+To detect negative-weight cycles, we examine each node $i$ and its predecessor $i.\pi$. If performing an additional relaxation — i.e., traversing from the predecessor to node 
 $i$ using the edge weight still results in a shorter path estimate from the source to $i$, this indicates the presence of a negative-weight cycle. Such a cycle would cause the path estimate to decrease indefinitely with each additional relaxation, violating the assumption of shortest-path stability.
 
 ### Example
