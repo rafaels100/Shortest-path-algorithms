@@ -61,7 +61,30 @@ void dijkstra(int root){
   }
   return;
 }
+//COMPLEJIDAD TEMPORAL:
+/*
+Para armar el min-heap con priority queue toma O(n)
+Luego, el while deberia pasar una sola vez por cada nodo en un mundo ideal, pero como no puedo operar sobre las claves
+de los elementos en el min-heap (no puedo reducir los valores de v.d, los shortest-path estimates, debido a que no tengo un metodo para ello en la priority_queue de c++), 
+debo tener entradas 'muertas' para nodos con distancias viejas, que fueron mejoradas, y que van a aumentar la cantidad de veces que se ejecuta este while loop.
+Pero, en el limite sigue siendo O(n).
+Una vez dentro del while, quito el minimo elemento del min heap, y debo mantener la estructura min-heap, por lo que esto cuesta O(log(n)). Durante todo el algoritmo 
+hago esto O(n) veces, entonces hasta ahora tengo:
+O(n log(n))
 
+Luego, en el for, durante todo el algoritmo, voy a hacer un maximo de O(m) operaciones, pues en el peor caso veo todas las aristas, pero tan solo una vez.
+Para relajar las aristas dentro del for, lo ideal seria si pudiera acceder a las claves del min-heap y modificarlas. Eso me llevaria O(log(n)), pues deberia mantener
+la estructura del min-heap una vez que modifico las claves/los shortest-past-estimates de los nodos.
+Sin embargo, como no tengo ese metodo, lo que hago es insertar en el min-heap en O(log(n)) una nueva clave con la distancia mejorada, y dejo una clave 'muerta', con
+el nodo cuando tenia un shortest-path-estimate peor. De todos modos, sigue costando O(log(n)). Esto lo hago a lo sumo O(m) veces durante todo el algoritmo.
+Esto me da una cantidad de operaciones de:
+O(m log(n))
+
+Junto todo y tengo:
+O(n + n log(n) + m log(n))
+Si el grafo es conexo y las aristas le ganan a los nodos, m >> n:
+=> O(m log(n))
+*/
 
 int main(){
   g = {{0, vector<pair<int, int>>{{1,10}, {2,5}}},
