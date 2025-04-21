@@ -23,6 +23,7 @@ struct comparator {
 
 void dijkstra(int root){
   //inicializo el vector de shortest-path-estimate
+  ds.clear();
   ds.resize(g.size(), INF);
   ds[root] = 0;
   //el ancestro es el mismo
